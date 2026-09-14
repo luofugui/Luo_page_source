@@ -246,6 +246,13 @@ body {
   vertical-align: middle;
 }
 
+.hero-logo {
+  display: block;
+  width: min(260px, 42vw);
+  height: auto;
+  margin: 0 0 18px 0;
+}
+
 .introduction {
   font-size: 60px;
   font-weight: 600;
@@ -1383,6 +1390,11 @@ ul.experience-chart h4 {
 ----------------------------------*/
 
 @media (max-width: 550px) and (min-height: 501px) {
+  .hero-logo {
+    width: min(190px, 56vw);
+    margin-bottom: 14px;
+  }
+
   .introduction {
     font-size: 45px;
     margin-bottom: 5px;
