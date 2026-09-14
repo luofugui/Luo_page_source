@@ -1103,6 +1103,13 @@ ul.experience-chart h4 {
   color: #4d4d4d;
 }
 
+.publication-citation strong:first-of-type {
+  color: #b6533c;
+  background: rgba(182, 83, 60, 0.12);
+  padding: 0 0.18em;
+  border-radius: 3px;
+}
+
 .publication-label {
   display: inline-block;
   color: #4d4d4d;

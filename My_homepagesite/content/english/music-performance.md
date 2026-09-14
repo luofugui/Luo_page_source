@@ -4,7 +4,7 @@ date: 2026-09-13
 draft: false
 url: "/music-performance/"
 layout: "music-performance"
-image: "/images/lifephoto.jpg"
+image: "images/music/lifephoto.jpg"
 ---
 
 Music has always been another language for me. Alongside engineering, I perform as a guitarist and Chinese traditional musician, using music as a way to connect with people, culture, and community.

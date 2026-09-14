@@ -14,7 +14,11 @@
       <ul class="desktop-menu list-inline mb-0" id="desktop-menu">
         {{ range .Site.Menus.main }}
         <li class="menu-item {{ .Weight }}">
-          <a href="{{ .URL }}">{{ .Name }}</a>
+          {{ if hasPrefix .URL "http" }}
+          <a href="{{ .URL | safeURL }}">{{ .Name }}</a>
+          {{ else }}
+          <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+          {{ end }}
         </li>
         {{ end }}
       </ul>
@@ -40,7 +44,11 @@
             <ul class="mobile-menu-list">
               {{ range .Site.Menus.main }}
               <li class="mobile-menu-item 1 mx-auto">
-                <a href="{{ .URL }}">{{ .Name }}</a>
+                {{ if hasPrefix .URL "http" }}
+                <a href="{{ .URL | safeURL }}">{{ .Name }}</a>
+                {{ else }}
+                <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+                {{ end }}
               </li>
               {{ end }}
             </ul>

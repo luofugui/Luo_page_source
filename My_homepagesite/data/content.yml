@@ -84,7 +84,7 @@ publications:
   title: 'PUBLICATIONS'
   publication_list:
     - label: 'Accepted Paper'
-      authors: 'Fu, Y., Luo, Y., Ndiaye, S., & Xu, C.'
+      authors: 'Fu, Y., **Luo, Y.**, Ndiaye, S., & Xu, C.'
       year: '2026'
       title: 'Out-of-clinic measurement of time-domain gait parameters from low-frame-rate videos.'
       venue: 'Accepted to the HumanSys 2026 Workshop at ACM MobiCom, to appear October 2026.'
@@ -112,7 +112,7 @@ portfolio:
   portfolio_list:
     - name: SmartRing
       image: 'images/portfolio/SmartRing.jpeg'
-      url: /smart-ring/
+      url: smart-ring/
       buttontext: 'VIEW PROJECT'
       description: SmartRing is an AI-enhanced wearable interface for meetings, built around an nRF52840-based prototype. The project integrates IMU-based gesture control, BLE HID interaction, audio capture, embedded UI, and battery management. I also developed a real-time AI workflow using Google Gemini APIs to transform live speech into meeting summaries, key decisions, and action items for hands-free documentation.
 
@@ -124,7 +124,7 @@ portfolio:
 
     - name: AR Glass Prototype
       image: 'images/portfolio/ARGlass.png'
-      url: /#portfolio
+      url: '#portfolio'
       buttontext: 'IN PROGRESS'
       description: An ongoing low-cost AR glasses prototype based on a BB solution and a low-power ESP32-S3 platform. The current stage has completed the 3D mechanical model and hardware bring-up/debugging. Planned features include music recognition, photo-based object/scene recognition assistance, and short visual plus voice navigation combined with a mobile app for walking or cycling.
 
@@ -135,6 +135,6 @@ music_performance:
   portfolio_list:
     - name: Guitar & Chinese Music Performance
       image: 'images/music/lifephoto.jpg'
-      url: /music-performance/
+      url: music-performance/
       buttontext: 'LEARN MORE'
       description: Music is another part of how I build and communicate. I perform as a guitarist and Chinese traditional musician, combining live performance with community cultural outreach through the NC Chinese Music Ensemble.

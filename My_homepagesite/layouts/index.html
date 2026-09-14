@@ -104,7 +104,7 @@
         {{ range .publication_list }}
         <article class="publication-item">
           {{ with .label }}<span class="publication-label">{{ . }}</span>{{ end }}
-          <p>
+          <p class="publication-citation">
             {{ .authors | markdownify }} ({{ .year }}).
             <strong>{{ .title | markdownify }}</strong>
             {{ .venue | markdownify }}
@@ -153,7 +153,11 @@
             {{ .description | markdownify }}
           </p>
           <a
-            href="{{ .url }}"
+            {{ if hasPrefix .url "http" }}
+              href="{{ .url | safeURL }}"
+            {{ else }}
+              href="{{ .url | relURL }}"
+            {{ end }}
             data-description-id="description-{{ $parsed_name | urlize }}"
             data-largesrc="{{ $big_image.RelPermalink }}"
             data-title="{{ .name }}"

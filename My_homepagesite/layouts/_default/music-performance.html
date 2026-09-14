@@ -5,7 +5,10 @@
     <div class="container">
       <div class="row music-detail-block">
         <div class="col-lg-5 col-md-6 col-12 music-detail-image">
-          <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" />
+          {{ with resources.Get .Params.image }}
+            {{ $music_image := .Resize "900x jpg" }}
+            <img src="{{ $music_image.RelPermalink }}" alt="{{ $.Title }}" />
+          {{ end }}
         </div>
         <div class="col-lg-7 col-md-6 col-12 music-detail-copy">
           <h1>{{ .Title }}</h1>
