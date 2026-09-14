@@ -150,24 +150,29 @@
     }
   });
 
-  function toggleLogoImg(id) {
-    var img = document.getElementById(id).src;
-    if (img.indexOf('logo-dark.svg') != -1) {
-      document.getElementById(id).src = '/images/logo.svg';
-    } else {
-      document.getElementById(id).src = '/images/logo-dark.svg';
+  function setLogoImg(id, variant) {
+    var logo = document.getElementById(id);
+    if (!logo) {
+      return;
+    }
+    var target =
+      variant === 'dark'
+        ? logo.getAttribute('data-logo-dark')
+        : logo.getAttribute('data-logo-light');
+    if (target) {
+      logo.src = target;
     }
   }
 
   // Styling Menu on Scroll
-  if (window.location.pathname === '/') {
+  if ($('#header').length) {
     $('.about-me').waypoint({
       handler: function (direction) {
         // Changing Menu background after leaving Header Section
         $('.menu-container').toggleClass('menu-normal');
         $('.menu-item').toggleClass('menu-item-transparent');
         // Toggle Logo
-        toggleLogoImg('desktop-logo');
+        setLogoImg('desktop-logo', direction === 'down' ? 'dark' : 'light');
         // Toggling Mobile Menu Visibility
         $('.mobile-menu').toggleClass('mobile-menu-fix');
         // Auto-Collapsing Mobile Menu When Left Open
@@ -184,7 +189,7 @@
     $('.menu-container').addClass('menu-normal');
     $('.menu-item').addClass('menu-item-transparent');
     // Toggle Logo
-    toggleLogoImg('desktop-logo');
+    setLogoImg('desktop-logo', 'dark');
     // Toggling Mobile Menu Visibility
     $('.mobile-menu').addClass('mobile-menu-fix');
   }

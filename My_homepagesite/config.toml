@@ -66,8 +66,8 @@ weight = 6
 
 #################### default parameters ################################
 [params]
-logo_light = "images/logo.svg"
-logo_dark = "images/logo-dark.svg"
+logo_light = "images/YL-logo.svg"
+logo_dark = "images/YL-logo.svg"
 copyright = "Copyright Yanxin Luo  &copy;"
 # Meta data
 description = "Personal Portfolio"
@@ -95,9 +95,6 @@ link = "https://www.linkedin.com/in/yanxin-luo"
 icon = "fas fa-envelope"
 link = "mailto:luoyx28@hotmail.com"
 
-[[params.social]]
-icon = "fab fa-medium"
-link = "https://medium.com/@gusburton"
 
 contentDir = "content/english"
 weight = 1
