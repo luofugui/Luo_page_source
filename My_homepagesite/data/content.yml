@@ -5,7 +5,7 @@ hero:
   # animated text loop
   occupations:
     - 'Embedded software Engineer'
-    - 'Music lover & Guitar player'
+    - 'Chinese Traditional Musician & Guitar player'
     - 'Excellent Chinese chef -- at home'
 
   # background image
@@ -19,7 +19,7 @@ about:
   
   image: 'images/myphoto.jpg'
   title: 'THIS IS ME'
-  content: 'I bring **6+ years experience of Embedded Software Engineering** in *UAV*, *warehouse robot*, *power industry* and *Environment Monitor* to my current journey into *AI+hardware* -- especially **wearble** field. [LinkedIn, Github, or by email](#contact)!'
+  content: 'I bring **6+ years of Embedded Software Engineering experience** across *UAVs*, *warehouse robots*, *power industry systems*, and *environmental monitoring* to my current journey in *AI + hardware*, especially **wearable and human-centered intelligent devices**. I am actively seeking research opportunities and preparing for **PhD applications for Fall 2027**, with interests in embedded AI, wearable sensing, mobile health, and assistive interactive systems. [LinkedIn, Github, or by email](#contact)!'
   params:
     social: 
       linkedin: "https://www.linkedin.conm/in/yourprofile"
@@ -35,19 +35,24 @@ experience:
   title: 'EXPERIENCE'
   experience_list:
     - name: Senior Embedded Software Engineer
-      company: Shanghai Quicktron Intelligent
-      duration: 'April 2021 – December 2023'
-      content: Led radar calibration code achieving 50% accuracy improvement. Refactored code into modular architectures reducing complexity by 30%. Managed bootloader code achieving 20% boot time reduction.
+      company: Zenitek Intelligent Technology Co., Ltd.
+      duration: 'December 2021 - August 2023'
+      content: Owned embedded software development for an STM32F7-based power detection system. Rearchitected 64-channel data acquisition, signal processing, and power computation, reducing the sampling cycle from 1s to 100ms. Optimized the ADC measurement pipeline and server communication interface, improving detection accuracy and enabling stable real-time transmission.
 
     - name: Senior Embedded Software Engineer
-      company: Zenitek Intelligent Technology Co., Ltd.
-      duration: 'December 2021 – August 2023'
-      content: Developed power detection equipment embedded software, reducing software bugs by 20%. Improved algorithm accuracy by 15% through key algorithm development and verification.
+      company: Shanghai Quicktron Intelligent
+      duration: 'April 2021 - December 2021'
+      content: Developed, maintained, and tested radar calibration software for robotic panels, improving calibration accuracy by 38%. Built warehouse robot control and communication modules with the motion-control team, improving response speed and resolving field failures across multiple provinces.
 
-    - name: Junior Embedded Software Engineer
+    - name: Embedded Software Engineer
       company: Focused Photonics Inc.
-      duration: 'October 2018 – April 2021'
-      content: Led iterative software development for dust monitoring devices, reducing development cycles by 30%. Designed human-machine interaction logic improving system responsiveness by 20%.
+      duration: 'October 2018 - April 2021'
+      content: Helped bring a dust-monitoring instrument from prototype to production, developing test and embedded software while resolving thermal and stability issues. Improved Modbus data transmission efficiency by 25% and redesigned the multi-monitoring system to reduce manual verification effort and operational cost.
+
+    - name: Embedded Software Engineer
+      company: Sunward Intelligent Equipment Co., Ltd.
+      duration: 'July 2017 - September 2018'
+      content: Developed hardware and software for a beyond-visual-line-of-sight drone communication module, reducing hardware cost by 15%. Redesigned multi-channel transmission control, reducing packet loss and extending communication range over the original module.
 
 ############################### Skill #################################
 skill:
@@ -73,9 +78,20 @@ skill:
     - name: 'JavaScript/TypeScript'
       percentage: '78%'
 
+########################### Publications ###############################
+publications:
+  enable: true
+  title: 'PUBLICATIONS'
+  publication_list:
+    - label: 'Accepted Paper'
+      authors: 'Fu, Y., Luo, Y., Ndiaye, S., & Xu, C.'
+      year: '2026'
+      title: 'Out-of-clinic measurement of time-domain gait parameters from low-frame-rate videos.'
+      venue: 'Accepted to the HumanSys 2026 Workshop at ACM MobiCom, to appear October 2026.'
+
 ######################### funfacts #############################
 funfacts:
-  enable: true
+  enable: false
   funfacts_list:
     - name: 'CUPS PER DAY'
       image: 'images/icons/coffee.png'
@@ -94,17 +110,31 @@ portfolio:
   enable: true
   title: 'MY WORK'
   portfolio_list:
-    - name: Hugo
-      image: 'images/portfolio/hugo.png'
-      url: https://gohugo.io
-      description: Commodo non mollit commodo esse. Quis ad Lorem eiusmod ad velit Lorem sint elit. Anim magna duis et duis pariatur eiusmod laboris esse. Sit duis labore sit esse enim laborum nisi sunt magna sint labore tempor. Sit sit sint eu laboris officia et sunt consequat sit excepteur nostrud eu. Fugiat aliqua id et pariatur quis commodo aute aliqua et magna officia eu cillum mollit. Sint culpa excepteur culpa culpa sint est eu dolore culpa duis adipisicing proident.
+    - name: SmartRing
+      image: 'images/portfolio/SmartRing.jpeg'
+      url: /smart-ring/
+      buttontext: 'VIEW PROJECT'
+      description: SmartRing is an AI-enhanced wearable interface for meetings, built around an nRF52840-based prototype. The project integrates IMU-based gesture control, BLE HID interaction, audio capture, embedded UI, and battery management. I also developed a real-time AI workflow using Google Gemini APIs to transform live speech into meeting summaries, key decisions, and action items for hands-free documentation.
 
-    - name: Hugo Themes
-      image: 'images/portfolio/hugothemes.png'
-      url: https://gohugo.io
-      description: Commodo non mollit commodo esse. Quis ad Lorem eiusmod ad velit Lorem sint elit. Anim magna duis et duis pariatur eiusmod laboris esse. Sit duis labore sit esse enim laborum nisi sunt magna sint labore tempor. Sit sit sint eu laboris officia et sunt consequat sit excepteur nostrud eu. Fugiat aliqua id et pariatur quis commodo aute aliqua et magna officia eu cillum mollit. Sint culpa excepteur culpa culpa sint est eu dolore culpa duis adipisicing proident.
+    - name: MagicUp
+      image: 'images/portfolio/MagicUp.png'
+      url: https://www.youtube.com/watch?v=bLvHS5BqWbs
+      buttontext: 'VIEW DEMO'
+      description: MagicUp is an Orange Pi 5 based smart mirror built during a 48-hour Duke AI Hackathon. I integrated the camera, microphone, display, and custom enclosure for real-time AR overlays, then developed an offline voice-activated AI workflow using Snowboy, face parsing, and OpenAI/Google APIs to generate personalized digital makeup effects.
 
-    - name: Just A Design
-      image: 'images/portfolio/design.png'
-      url: https://gohugo.io
-      description: Commodo non mollit commodo esse. Quis ad Lorem eiusmod ad velit Lorem sint elit. Anim magna duis et duis pariatur eiusmod laboris esse. Sit duis labore sit esse enim laborum nisi sunt magna sint labore tempor. Sit sit sint eu laboris officia et sunt consequat sit excepteur nostrud eu. Fugiat aliqua id et pariatur quis commodo aute aliqua et magna officia eu cillum mollit. Sint culpa excepteur culpa culpa sint est eu dolore culpa duis adipisicing proident.
+    - name: AR Glass Prototype
+      image: 'images/portfolio/ARGlass.png'
+      url: /#portfolio
+      buttontext: 'IN PROGRESS'
+      description: An ongoing low-cost AR glasses prototype based on a BB solution and a low-power ESP32-S3 platform. The current stage has completed the 3D mechanical model and hardware bring-up/debugging. Planned features include music recognition, photo-based object/scene recognition assistance, and short visual plus voice navigation combined with a mobile app for walking or cycling.
+
+######################## music performance #############################
+music_performance:
+  enable: true
+  title: 'MY MUSIC PERFORMANCE'
+  portfolio_list:
+    - name: Guitar & Chinese Music Performance
+      image: 'images/music/lifephoto.jpg'
+      url: /music-performance/
+      buttontext: 'LEARN MORE'
+      description: Music is another part of how I build and communicate. I perform as a guitarist and Chinese traditional musician, combining live performance with community cultural outreach through the NC Chinese Music Ensemble.

@@ -137,6 +137,9 @@
   $('.menu-item').each(function () {
     const link = $(this).find('a').attr('href');
     const linkNoAnchor = link.includes('#') ? link.split('#')[0] : link;
+    if (!linkNoAnchor || linkNoAnchor === '/') {
+      return;
+    }
     const path = window.location.pathname;
     const locationNoTrailing =
       path.endsWith('/') && path.length > 1
@@ -163,7 +166,6 @@
         // Changing Menu background after leaving Header Section
         $('.menu-container').toggleClass('menu-normal');
         $('.menu-item').toggleClass('menu-item-transparent');
-        $('.desktop-menu .hvr-underline-from-left').toggleClass('dark');
         // Toggle Logo
         toggleLogoImg('desktop-logo');
         // Toggling Mobile Menu Visibility
@@ -181,7 +183,6 @@
     // Changing Menu background after leaving Header Section
     $('.menu-container').addClass('menu-normal');
     $('.menu-item').addClass('menu-item-transparent');
-    $('.desktop-menu .hvr-underline-from-left').addClass('dark');
     // Toggle Logo
     toggleLogoImg('desktop-logo');
     // Toggling Mobile Menu Visibility
@@ -322,5 +323,73 @@
   /*--------------------------------
 			Others
   ----------------------------------*/
+  function initMusicGallery() {
+    var $cards = $('.music-gallery-card');
+    var $lightbox = $('.music-lightbox');
+    if (!$cards.length || !$lightbox.length) return;
+
+    var photos = $cards
+      .map(function () {
+        return {
+          src: $(this).data('gallery-src'),
+          alt: $(this).data('gallery-alt')
+        };
+      })
+      .get();
+    var currentIndex = 0;
+    var touchStartX = 0;
+
+    function showPhoto(index) {
+      currentIndex = (index + photos.length) % photos.length;
+      var photo = photos[currentIndex];
+      $lightbox.find('img').attr('src', photo.src).attr('alt', photo.alt);
+      $lightbox
+        .find('.music-lightbox-counter')
+        .text(currentIndex + 1 + ' / ' + photos.length);
+    }
+
+    function openLightbox(index) {
+      showPhoto(index);
+      $lightbox.addClass('is-open').attr('aria-hidden', 'false');
+      $('body').css('overflow', 'hidden');
+    }
+
+    function closeLightbox() {
+      $lightbox.removeClass('is-open').attr('aria-hidden', 'true');
+      $('body').css('overflow', '');
+    }
+
+    $cards.on('click', function () {
+      openLightbox(Number($(this).data('gallery-index')));
+    });
+    $('.music-lightbox-close').on('click', closeLightbox);
+    $('.music-lightbox-prev').on('click', function () {
+      showPhoto(currentIndex - 1);
+    });
+    $('.music-lightbox-next').on('click', function () {
+      showPhoto(currentIndex + 1);
+    });
+    $lightbox.on('click', function (event) {
+      if (event.target === this) closeLightbox();
+    });
+    $lightbox.on('touchstart', function (event) {
+      touchStartX = event.originalEvent.touches[0].clientX;
+    });
+    $lightbox.on('touchend', function (event) {
+      var touchEndX = event.originalEvent.changedTouches[0].clientX;
+      var deltaX = touchEndX - touchStartX;
+      if (Math.abs(deltaX) < 40) return;
+      showPhoto(currentIndex + (deltaX < 0 ? 1 : -1));
+    });
+    $(document).on('keydown', function (event) {
+      if (!$lightbox.hasClass('is-open')) return;
+      if (event.key === 'Escape') closeLightbox();
+      if (event.key === 'ArrowLeft') showPhoto(currentIndex - 1);
+      if (event.key === 'ArrowRight') showPhoto(currentIndex + 1);
+    });
+  }
+
+  initMusicGallery();
+
   $('#current-year').html(new Date().getFullYear());
 })(jQuery);

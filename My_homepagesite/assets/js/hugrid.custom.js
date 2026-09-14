@@ -124,7 +124,7 @@ $.fn.imagesLoaded = function (callback) {
 };
 
 var Grid = (function () {
-  var $grid = $('*#og-grid'),
+  var $grid = $('.og-grid'),
     $items = $grid.children('li'),
     current = -1,
     previewPos = -1,
@@ -316,7 +316,7 @@ var Grid = (function () {
           largesrc: $itemEl.data('largesrc'),
           title: $itemEl.data('title'),
           description: $(
-            `#description-${formatForUrl($itemEl.data('title'))}`
+            `#${$itemEl.data('description-id') || `description-${formatForUrl($itemEl.data('title'))}`}`
           ).html(),
           buttontext: $itemEl.data('buttontext')
         };

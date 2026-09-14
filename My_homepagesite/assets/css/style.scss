@@ -637,46 +637,24 @@ label {
   display: flex;
   align-items: center;
   margin-right: 20px;
+  &:before,
+  &:after {
+    display: none;
+    content: none;
+  }
   a {
     text-decoration: none;
     color: #fff;
     font-size: 17px;
     transition: color 1s;
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+    }
   }
 }
 .desktop-menu {
-  .hvr-underline-from-left {
-    &:hover {
-      &:before {
-        right: 0;
-      }
-    }
-    &:focus {
-      &:before {
-        right: 0;
-      }
-    }
-    &:active {
-      &:before {
-        right: 0;
-      }
-    }
-    &:before {
-      background: #fff;
-      bottom: 11px;
-      height: 2.5px;
-    }
-  }
-  .hvr-underline-from-left.active {
-    &:before {
-      right: 0;
-    }
-  }
-  .hvr-underline-from-left.dark {
-    &:before {
-      background: #6f6f6f;
-    }
-  }
   display: flex;
   width: 82%;
   justify-self: flex-end;
@@ -950,6 +928,310 @@ ul.experience-chart {
     font-weight: 700;
     letter-spacing: 4px;
     position: relative;
+  }
+}
+.music-performance-holder {
+  align-items: center;
+  margin-top: 34px;
+}
+.music-performance-image {
+  img {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+  }
+}
+.music-performance-copy {
+  h3 {
+    color: #4d4d4d;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  p {
+    color: #6f6f6f;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+.music-detail {
+  background: #fff;
+  padding: 70px 0px;
+}
+.music-detail-block {
+  align-items: center;
+}
+.music-detail-image {
+  img {
+    display: block;
+    width: 100%;
+    max-height: 540px;
+    object-fit: contain;
+  }
+}
+.music-detail-copy {
+  h1 {
+    color: #4d4d4d;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  p {
+    color: #6f6f6f;
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  a {
+    color: #4d4d4d;
+    font-weight: 700;
+  }
+}
+.project-detail {
+  background: #fff;
+  padding: 70px 0px;
+}
+.project-detail-block {
+  align-items: center;
+}
+.project-detail-image {
+  img {
+    display: block;
+    width: 100%;
+    max-height: 540px;
+    object-fit: contain;
+  }
+}
+.project-detail-copy {
+  h1 {
+    color: #4d4d4d;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  p {
+    color: #6f6f6f;
+    font-size: 16px;
+    line-height: 1.85;
+  }
+}
+.project-summary {
+  color: #4d4d4d !important;
+  font-weight: 700;
+}
+.project-media {
+  background: #fff;
+  padding: 20px 0px 70px;
+  h2 {
+    color: #6f6f6f;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 32px;
+  }
+}
+.project-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.project-drive-folder {
+  iframe {
+    display: block;
+    width: 100%;
+    min-height: 520px;
+    border: 0;
+    background: #f7f7f7;
+  }
+}
+.project-media-link {
+  margin-top: 16px;
+  text-align: center;
+  a {
+    color: #4d4d4d;
+    font-weight: 700;
+  }
+}
+.project-media-item {
+  iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    background: #f7f7f7;
+  }
+  h3 {
+    color: #4d4d4d;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 14px;
+  }
+  p {
+    color: #6f6f6f;
+    line-height: 1.7;
+  }
+}
+.publications {
+  background: #fff;
+  padding: 70px 0px;
+  h2 {
+    color: #6f6f6f;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 34px;
+  }
+}
+.publication-item {
+  border-left: 2px solid #6f6f6f;
+  padding-left: 24px;
+  color: #6f6f6f;
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 0;
+  }
+  strong {
+    color: #4d4d4d;
+  }
+}
+.publication-label {
+  display: inline-block;
+  color: #4d4d4d;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.og-grid li > a {
+  width: 395px;
+  height: 250px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background: #f7f7f7;
+}
+.og-grid li > a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.music-gallery {
+  background: #fff;
+  padding: 20px 0px 70px;
+  h2 {
+    color: #6f6f6f;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 32px;
+  }
+}
+.music-gallery-stage {
+  position: relative;
+  width: min(82vw, 720px);
+  height: clamp(340px, 58vw, 520px);
+  margin: 0 auto;
+}
+.music-gallery-card {
+  position: absolute;
+  top: calc(var(--card-index) * 10px);
+  left: calc(50% - 255px + var(--card-index) * 14px);
+  width: min(70vw, 510px);
+  padding: 12px 12px 42px;
+  border: 0;
+  background: #fff;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transform: rotate(calc((var(--card-index) - 3.5) * 1.8deg));
+  transform-origin: center bottom;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: calc(20 - var(--card-index));
+  &:hover,
+  &:focus {
+    transform: translateY(-10px)
+      rotate(calc((var(--card-index) - 3.5) * 1.8deg));
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
+    outline: none;
+  }
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 14 / 10;
+    object-fit: cover;
+  }
+}
+.music-lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.82);
+  padding: 28px;
+}
+.music-lightbox.is-open {
+  display: flex;
+}
+.music-lightbox-frame {
+  max-width: min(92vw, 1100px);
+  text-align: center;
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 82vh;
+    object-fit: contain;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.5);
+  }
+}
+.music-lightbox-counter {
+  color: #fff;
+  margin-top: 14px;
+  font-weight: 700;
+}
+.music-lightbox-close,
+.music-lightbox-nav {
+  position: fixed;
+  border: 0;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+}
+.music-lightbox-close {
+  top: 18px;
+  right: 22px;
+  width: 44px;
+  height: 44px;
+  font-size: 34px;
+}
+.music-lightbox-nav {
+  top: 50%;
+  width: 52px;
+  height: 72px;
+  font-size: 52px;
+  transform: translateY(-50%);
+}
+.music-lightbox-prev {
+  left: 18px;
+}
+.music-lightbox-next {
+  right: 18px;
+}
+@media (max-width: 767px) {
+  .music-gallery-stage {
+    width: 94vw;
+    height: 390px;
+  }
+  .music-gallery-card {
+    left: calc(50% - 145px + var(--card-index) * 8px);
+    width: 290px;
+    padding: 8px 8px 30px;
+  }
+  .music-lightbox {
+    padding: 16px;
+  }
+  .music-lightbox-nav {
+    top: auto;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    font-size: 42px;
+    transform: none;
   }
 }
 .under-menu {

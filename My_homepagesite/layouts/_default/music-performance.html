@@ -1,0 +1,69 @@
+{{ define "main" }}
+  {{ partial "menu" . }}
+
+  <section class="music-detail under-menu">
+    <div class="container">
+      <div class="row music-detail-block">
+        <div class="col-lg-5 col-md-6 col-12 music-detail-image">
+          <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" />
+        </div>
+        <div class="col-lg-7 col-md-6 col-12 music-detail-copy">
+          <h1>{{ .Title }}</h1>
+          <div class="body">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ $gallery := resources.Match "images/music/gallery/performance-*.jpeg" }}
+  {{ if $gallery }}
+  <section class="music-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2>Performance Gallery</h2>
+        </div>
+      </div>
+      <div class="music-gallery-stage">
+        {{ range $index, $image := sort $gallery "Name" "asc" }}
+          {{ $thumb := $image.Fill "560x390 jpg" }}
+          {{ $large := $image.Resize "1400x jpg" }}
+          <button
+            class="music-gallery-card"
+            type="button"
+            style="--card-index: {{ $index }}"
+            data-gallery-index="{{ $index }}"
+            data-gallery-src="{{ $large.RelPermalink }}"
+            data-gallery-alt="Music performance photo {{ add $index 1 }}"
+          >
+            <img
+              src="{{ $thumb.RelPermalink }}"
+              alt="Music performance photo {{ add $index 1 }}"
+              loading="lazy"
+            />
+          </button>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  <div class="music-lightbox" aria-hidden="true">
+    <button class="music-lightbox-close" type="button" aria-label="Close gallery">
+      &times;
+    </button>
+    <button class="music-lightbox-nav music-lightbox-prev" type="button" aria-label="Previous photo">
+      &#8249;
+    </button>
+    <div class="music-lightbox-frame">
+      <img src="" alt="" />
+      <p class="music-lightbox-counter"></p>
+    </div>
+    <button class="music-lightbox-nav music-lightbox-next" type="button" aria-label="Next photo">
+      &#8250;
+    </button>
+  </div>
+  {{ end }}
+
+  {{ partial "footer" . }}
+{{ end }}

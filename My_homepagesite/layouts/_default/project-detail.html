@@ -1,0 +1,89 @@
+{{ define "main" }}
+  {{ partial "menu" . }}
+
+  <section class="project-detail under-menu">
+    <div class="container">
+      <div class="row project-detail-block">
+        <div class="col-lg-5 col-md-6 col-12 project-detail-image">
+          {{ with resources.Get .Params.image }}
+            {{ $project_image := .Resize "900x jpg" }}
+            <img src="{{ $project_image.RelPermalink }}" alt="{{ $.Title }}" />
+          {{ end }}
+        </div>
+        <div class="col-lg-7 col-md-6 col-12 project-detail-copy">
+          <h1>{{ .Title }}</h1>
+          {{ with .Params.summary }}<p class="project-summary">{{ . }}</p>{{ end }}
+          <div class="body">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ with .Params.drive_folder_id }}
+  <section class="project-media">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2>Project Media</h2>
+        </div>
+      </div>
+      <div class="project-drive-folder">
+        <iframe
+          src="https://drive.google.com/embeddedfolderview?id={{ . }}#grid"
+          loading="lazy"
+          title="SmartRing Google Drive media folder"
+        ></iframe>
+      </div>
+      <p class="project-media-link">
+        <a
+          href="https://drive.google.com/drive/folders/{{ . }}?usp=sharing"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open media folder in Google Drive
+        </a>
+      </p>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with .Params.drive_media }}
+  <section class="project-media">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2>Project Media</h2>
+        </div>
+      </div>
+      <div class="project-media-grid">
+        {{ range . }}
+          <article class="project-media-item">
+            {{ if eq .type "video" }}
+              <iframe
+                src="https://drive.google.com/file/d/{{ .id }}/preview"
+                allow="autoplay"
+                allowfullscreen
+                loading="lazy"
+                title="{{ .title }}"
+              ></iframe>
+            {{ else }}
+              <iframe
+                src="https://drive.google.com/file/d/{{ .id }}/preview"
+                allowfullscreen
+                loading="lazy"
+                title="{{ .title }}"
+              ></iframe>
+            {{ end }}
+            {{ with .title }}<h3>{{ . }}</h3>{{ end }}
+            {{ with .caption }}<p>{{ . }}</p>{{ end }}
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ partial "footer" . }}
+{{ end }}
