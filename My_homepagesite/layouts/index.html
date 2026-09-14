@@ -106,7 +106,7 @@
           {{ with .label }}<span class="publication-label">{{ . }}</span>{{ end }}
           <p class="publication-citation">
             {{ .authors | markdownify }} ({{ .year }}).
-            <strong>{{ .title | markdownify }}</strong>
+            {{ .title | markdownify }}
             {{ .venue | markdownify }}
           </p>
         </article>
