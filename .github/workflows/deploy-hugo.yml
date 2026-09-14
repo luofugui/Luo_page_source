@@ -33,7 +33,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          submodules: true
+          submodules: false
+
+      - name: Checkout Hugo theme
+        run: |
+          git submodule sync -- My_homepagesite/themes/port-hugo
+          git submodule update --init --depth=1 -- My_homepagesite/themes/port-hugo
 
       - name: Setup Pages
         id: pages
